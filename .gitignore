@@ -43,3 +43,5 @@ Thumbs.db
 
 # Loom binary
 loom
+# Added by goreleaser init:
+dist/
