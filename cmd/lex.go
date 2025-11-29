@@ -20,20 +20,10 @@ func lexCommand(){
 
 	file := os.Args[2]
 	if !strings.HasSuffix(file, ".k"){
-		indexOfDot := strings.LastIndex(file, ".")
-
-		if indexOfDot == -1 {
-			fmt.Println("No suffix/extension found in: ", file)
-			return
-		}
-
-		sufixo := file[indexOfDot:]
-
-		fmt.Println("Erro: Not a .k file")
+		fmt.Printf("%s✖ Error:%s Not a .k file\n", log.ERROR_COLOR, log.RESET_COLOR)
 		log.Line()
-		
-		fmt.Println("File: ", file, " is a ", sufixo, " file")
-		fmt.Println("did you provide the wrong file?")
+		fmt.Printf("%sFile:%s %s\n", log.PRIMARY_COLOR, log.RESET_COLOR, file)
+		fmt.Printf("%sHint:%s Did you pass the wrong file?\n", log.PRIMARY_COLOR, log.RESET_COLOR)
 		
 		return
 	}
@@ -45,20 +35,11 @@ func lexCommand(){
 		return
 	}
 
-	fmt.Println("loom lex ", file)
+	fmt.Printf("%s◉%s Running lexer in simulation...\n", log.PRIMARY_LIGHT, log.RESET_COLOR)
+	fmt.Printf("%s✔%s %s successfully lexicalized!\n", log.SUCESS_COLOR, log.RESET_COLOR, file)
+
 	log.Line()
-
-	fmt.Println("Running lexer in (simulation)...")
-	fmt.Println("\n✔ ", file, " successfully lexicalized!")
-
-	fmt.Println("Conteúdo de ", file, " (primeiros 50 bytes):")
-	log.Line()
-	fmt.Println(string(data[:50])) 
-
-	fmt.Println()
-
-	fmt.Println("Tokens:")
-	log.Line()
-	fmt.Println("Tokens here...")
+	fmt.Printf("%sPreview (50 bytes):%s\n", log.PRIMARY_COLOR, log.RESET_COLOR)
+	fmt.Println(string(data[:50]))
 
 }

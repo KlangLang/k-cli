@@ -9,25 +9,23 @@ func showHelp() {
 
 	log.Header()
 	fmt.Println()
-
-	fmt.Println("loom --help")
+	
+	fmt.Printf("%sCommands%s\n", log.PRIMARY_COLOR, log.RESET_COLOR)
+	fmt.Printf("  %snew%s   <project>     Create a new Klang project\n", log.PRIMARY_COLOR, log.RESET_COLOR)
+	fmt.Printf("  %slex%s   <file.k>      Lexicalize a Klang file\n", log.PRIMARY_COLOR, log.RESET_COLOR)
+	
+	fmt.Println()
+	
+	fmt.Printf("%sOptions%s\n", log.PRIMARY_COLOR, log.RESET_COLOR)
+	fmt.Printf("  %s-V%s, %s--version%s   Show versions\n", log.PRIMARY_COLOR, log.RESET_COLOR, log.PRIMARY_COLOR, log.RESET_COLOR)
+	fmt.Printf("  %s-h%s, %s--help%s      Show this help\n",    log.PRIMARY_COLOR, log.RESET_COLOR, log.PRIMARY_COLOR, log.RESET_COLOR)
+	
+	fmt.Println()
+	
+	fmt.Printf("%sVersions%s\n", log.PRIMARY_COLOR, log.RESET_COLOR)
+	fmt.Printf("  loom:       %s-dev\n", log.LoomVersion)
+	fmt.Printf("  Klang Core: %s-dev\n", log.KlangVersion)
+	
 	log.Line()
-	fmt.Println()
-
-	fmt.Println("Commands")
-	fmt.Println("	new <project_name>		Create a new Klang project")
-	fmt.Println("	lex <.k file>	     		Lexicalize a .k file")
-
-	fmt.Println()
-
-	fmt.Println("Options")
-	fmt.Println("	-V, --version   		Show versions")
-	fmt.Println("	-h, --help       		Show this help log")
-
-	fmt.Println()
-
-	fmt.Println("Versions")
-	fmt.Printf("	loom: 				%s-dev\n", log.LoomVersion)
-	fmt.Printf("	Klang core: 			%s-dev\n", log.KlangVersion)
-
+	
 }

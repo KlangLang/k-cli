@@ -26,9 +26,10 @@ func showVersion(){
 
 	fmt.Println("loom --version")
 	log.Line()
-	fmt.Printf("loom %s-dev\n", log.LoomVersion)
-	fmt.Printf("Klang core %s-dev\n", log.KlangVersion)
-	fmt.Println("Target: JVM", )
-	fmt.Println("Build: debug")
-	log.Line()
+	fmt.Println()
+	fmt.Printf("%sloom%s %s-dev\n", log.PRIMARY_COLOR, log.RESET_COLOR, log.LoomVersion)
+	fmt.Printf("%sKlang Core:%s %s-dev\n", log.PRIMARY_COLOR, log.RESET_COLOR, log.KlangVersion)
+	fmt.Printf("%sTarget:%s JVM\n", log.PRIMARY_COLOR, log.RESET_COLOR)
+	fmt.Printf("%sBuild:%s  debug\n", log.PRIMARY_COLOR, log.RESET_COLOR)
+
 }

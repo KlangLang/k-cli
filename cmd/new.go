@@ -13,26 +13,26 @@ func newCommand(){
 	}
 
 	log := NewLog()
-
+	name := os.Args[2]
+	
 	log.Header()
 	fmt.Println()
-
-	name := os.Args[2]
-	fmt.Println("loom new ", name)
+	
 	log.Line()
-
-	fmt.Println("◉ Creating project structure...")
+	fmt.Printf("%s◉%s Creating project structure...\n", log.PRIMARY_COLOR, log.RESET_COLOR)
 	
 	err := os.Mkdir(name, 0755)
 	if err != nil {
-		fmt.Println("\n❌ Error creating project:", err)
-		return
+	    fmt.Printf("%s✖ Error:%s %s\n", log.ERROR_COLOR, log.RESET_COLOR, err)
+	    return
 	}
-	
-	fmt.Println("◉ Writing default manifest...")
-	fmt.Println("◉ Initializing Klang module...")
-	fmt.Println("◉ Ready.")
 
+	fmt.Printf("%s◉%s Writing manifest...\n", log.PRIMARY_COLOR, log.RESET_COLOR)
+	fmt.Printf("%s◉%s Initializing Klang module...\n", log.PRIMARY_COLOR, log.RESET_COLOR)
+	fmt.Printf("%s◈%s Finalizing...\n", log.ACCENT_COLOR, log.RESET_COLOR)
 
-	fmt.Println("\n✔ Project ", name, " created.")
+	fmt.Printf("\n%s✔%s Project '%s' created.\n",
+	    log.SUCESS_COLOR, log.RESET_COLOR, name)
+	log.Line()
+
 }
