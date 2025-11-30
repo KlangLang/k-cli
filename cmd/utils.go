@@ -42,7 +42,7 @@ func (l Log) Line() {
 
 func NewLog() Log {
 	return Log{
-		LoomVersion: "v0.1.7",
+		LoomVersion: "v0.5.0",
 		KlangVersion: "v0.1.10",
 		
 		RESET_COLOR:   "\033[0m",
