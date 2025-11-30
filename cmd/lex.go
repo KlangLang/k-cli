@@ -16,6 +16,7 @@ func lexCommand(){
 	log := NewLog()
 
 	log.Header()
+	log.finalizeBottomheader()
 	fmt.Println()
 
 	file := os.Args[2]

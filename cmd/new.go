@@ -16,6 +16,7 @@ func newCommand(){
 	name := os.Args[2]
 	
 	log.Header()
+	log.finalizeBottomheader()
 	fmt.Println()
 	
 	log.Line()

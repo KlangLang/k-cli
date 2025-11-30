@@ -1,35 +1,26 @@
 package cmd
 
-import (
-	"fmt"
-	"os"
-)
+import "fmt"
 
 
 func showVersion(){
 	log := NewLog()
+	width := log.getTerminalWidth()
 
-	if len(os.Args) - 1 >= 2 {
-		if os.Args[2] == "--short" || os.Args[2] == "-st"{
-			fmt.Println("loom --version")
-			log.Line()
+	log.Header()
 
-			fmt.Printf("loom %s-dev\n", log.LoomVersion)
-			fmt.Printf("Klang core %s-dev\n", log.KlangVersion)
-			return
-		} 
-		
-		fmt.Println("Unexpected command:'", os.Args[3], "'")
+	if width < 80 {
+
+		log.newLine("			   ")		
+		log.addNewLineToHealder(fmt.Sprintf("    %sEnv info:            %s", log.PRIMARY_COLOR, log.RESET_COLOR))
+		log.addNewLineToHealder("       Target: JVM       ")
+		log.addNewLineToHealder("       Build:  debug	   ")	
+		log.finalizeBottomheader()
 		return
-		
 	}
 
-	fmt.Println("loom --version")
-	log.Line()
-	fmt.Println()
-	fmt.Printf("%sloom%s %s-dev\n", log.PRIMARY_COLOR, log.RESET_COLOR, log.LoomVersion)
-	fmt.Printf("%sKlang Core:%s %s-dev\n", log.PRIMARY_COLOR, log.RESET_COLOR, log.KlangVersion)
-	fmt.Printf("%sTarget:%s JVM\n", log.PRIMARY_COLOR, log.RESET_COLOR)
-	fmt.Printf("%sBuild:%s  debug\n", log.PRIMARY_COLOR, log.RESET_COLOR)
-
+	log.addNewLineToHealder(fmt.Sprintf("                         %sEnv info:%s                                      ", log.PRIMARY_COLOR, log.RESET_COLOR))
+	log.addNewLineToHealder("                             Target: JVM                                ")							
+	log.addNewLineToHealder("                             Build:  debug                              ")
+	log.finalizeBottomheader()
 }
