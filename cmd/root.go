@@ -25,6 +25,8 @@ func Execute(){
 	case "uninstall" :
 		removeCommand()
 
+	case "install":
+		installCommand()	
 	default:
 		fmt.Println("Unknown command: '", os.Args[1], "'");
 		showHelp()

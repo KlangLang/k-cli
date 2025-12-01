@@ -43,9 +43,8 @@ func (l Log) Header() {
 		fmt.Printf("%s│%s            %s##%s            %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_LIGHT, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
 		fmt.Printf("%s│%s                          %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
 		fmt.Printf("%s├──────────────────────────┤%s\n", l.PRIMARY_DARK, l.RESET_COLOR)
-		fmt.Printf("%s│%s loom                     %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
+		fmt.Printf("%s│%s loom - %s               %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.LoomVersion, l.PRIMARY_DARK, l.RESET_COLOR)
 		fmt.Printf("%s│%s Klang Project Mgr        %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
-		fmt.Printf("%s│%s L - %s • K - %s %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.LoomVersion, l.KlangVersion, l.PRIMARY_DARK, l.RESET_COLOR)
 		return
 	}
 	
@@ -54,10 +53,10 @@ func (l Log) Header() {
 	fmt.Printf("%s│%s                                            				  %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
 	fmt.Printf("%s│%s          %s##%s                                				  %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_LIGHT, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
 	fmt.Printf("%s│%s            %s##%s                              				  %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_LIGHT, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
-	fmt.Printf("%s│%s      %s##  ######%s      	   loom                  			  %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_LIGHT, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
+	fmt.Printf("%s│%s      %s##  ######%s      	   loom version %s                            %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_LIGHT, l.RESET_COLOR, l.LoomVersion, l.PRIMARY_DARK, l.RESET_COLOR)
 	fmt.Printf("%s│%s    %s##  ####    ##%s    	   Klang Project Manager 			  %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_LIGHT, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
 	fmt.Printf("%s│%s      %s######%s                                				  %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_LIGHT, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
-	fmt.Printf("%s│%s            %s##%s            version %s  •  Klang Core %s	  %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_LIGHT, l.RESET_COLOR, l.LoomVersion, l.KlangVersion, l.PRIMARY_DARK, l.RESET_COLOR)
+	fmt.Printf("%s│%s            %s##%s            	                     	                  %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_LIGHT, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
 	fmt.Printf("%s│%s          %s##%s                                				  %s│%s\n", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_LIGHT, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
 	fmt.Printf("%s│%s                                            				  %s│%s", l.PRIMARY_DARK, l.RESET_COLOR, l.PRIMARY_DARK, l.RESET_COLOR)
 }

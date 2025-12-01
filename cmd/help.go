@@ -55,7 +55,6 @@ func showHelp() {
 	
 	fmt.Printf("%sVersions%s\n", log.PRIMARY_COLOR, log.RESET_COLOR)
 	fmt.Printf("  loom:       %s-dev\n", log.LoomVersion)
-	fmt.Printf("  Klang Core: %s-dev\n", log.KlangVersion)
 	
 	log.Line()
 		
